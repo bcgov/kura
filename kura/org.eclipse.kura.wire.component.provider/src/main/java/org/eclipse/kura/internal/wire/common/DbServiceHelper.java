@@ -9,7 +9,7 @@
  * Contributors:
  *  Eurotech
  *  Amit Kumar Mondal
- *  
+ *
  *******************************************************************************/
 package org.eclipse.kura.internal.wire.common;
 
@@ -76,7 +76,6 @@ public final class DbServiceHelper {
      *             if argument is null
      */
     public void close(final Connection conn) {
-        requireNonNull(conn, message.connectionNonNull());
         logger.debug(message.closingConnection() + conn);
         this.dbService.close(conn);
         logger.debug(message.closingConnectionDone());
@@ -124,7 +123,7 @@ public final class DbServiceHelper {
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
-            conn = this.getConnection();
+            conn = getConnection();
             stmt = conn.prepareStatement(sql);
             for (int i = 0; i < params.length; i++) {
                 stmt.setInt(1 + i, params[i]);
@@ -132,7 +131,7 @@ public final class DbServiceHelper {
             stmt.execute();
             conn.commit();
         } catch (final SQLException e) {
-            this.rollback(conn);
+            rollback(conn);
             throw e;
         } finally {
             this.close(stmt);
