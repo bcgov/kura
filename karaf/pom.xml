@@ -11,7 +11,7 @@
 
     <properties>
         <karaf.version.plugin>4.0.7</karaf.version.plugin>
-        <karaf.version>4.0.5</karaf.version>
+        <karaf.version>4.0.8</karaf.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -73,7 +73,7 @@
                 																								</goals>
                 																				</pluginExecutionFilter>
                 																				<action>
-                																								<ignore></ignore>
+                																								<ignore/>
                 																				</action>
                 																</pluginExecution>
                 												</pluginExecutions>
